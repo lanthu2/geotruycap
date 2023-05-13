@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IP và Quốc gia</title>
+</head>
+<body>
+	<h1>IP và Quốc gia của bạn là:</h1>
+	<p id="ip"></p>
+	<p id="country"></p>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$.getJSON('http://api.ipstack.com/check?access_key=52bb5b7a4354a187ef0b598a288254f2', function(data) {
+				$('#ip').text(data.ip);
+				$('#country').text(data.country_name);
+			});
+		});
+	</script>
+</body>
+</html>
